@@ -1,0 +1,5 @@
+//To Compile Java
+C:\Users\dac\Music\JAVA\Assign_Day1\src>javac -d ../bin tester/TestCalculator.java
+
+//To Run Class
+C:\Users\dac\Music\JAVA\Assign_Day1\bin>java tester/TestCalculator
