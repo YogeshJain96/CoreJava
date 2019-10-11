@@ -1,0 +1,30 @@
+What is ClassLoader in Java
+
+ClassLoader in Java is a class which is used to load class files in Java. Java code is compiled into class file by javac compiler and JVM executes Java program, by executing byte codes written in class file. ClassLoader is responsible for loading class files from file system, network or any other source. There are three default class loader used in Java, Bootstrap , Extension and System or Application class loader. 
+
+Here is the location from which Bootstrap, Extension and Application ClassLoader load Class files.
+
+1) Bootstrap ClassLoader - JRE/lib/rt.jar
+
+2) Extension ClassLoader - JRE/lib/ext or any directory denoted by java.ext.dirs
+
+3) Application ClassLoader - CLASSPATH environment variable, -classpath or -cp option, Class-Path attribute of Manifest inside JAR file.
+
+
+
+Classloading steps
+1.Loading --loading .class file in method area & JVM creates object of class java.lang.Class<T>  -- in the heap.
+
+2. Linking
+2.1 Verification --JVM verifies if the loaded byte code are valid or not , are they created out of valid javac or not.
+otherwise throws --java.lang.VerfiyError
+2.2 Preparation -- Allocates memory of all static variables & assigns them with default values.
+2.3 Resolution --Symbolic references will be replaced by direct references.
+
+eg Tester using String,System,Emp
+Then initially in loading phase , classloader will simply keep the names of these classes(Emp.class) in the constant pool of Tester class.
+In the resolution phase , these names will be actually replaced by actual references from method area.
+
+3. Initialization phase 
+JVM will assign actual values to static varaibles & execute static init blocks from top to bottom & from parent class to child class.
+Any err --java.lang.LinkageError
