@@ -1,0 +1,23 @@
+Lab sequence
+
+1. Revise arrays of primitive types using readme & code sample TestPrimitiveArray.java
+
+2. Revise arrays of ref types using readme & code sample TestReferenceArray.java
+
+3. Replace for loop by for-each , observe n conclude.
+
+4. Solve all param passing egs with understanding
+
+5. Practice writing methods to pass or return object reference.
+
+Solve 
+Add a method to Box class 
+1. To return a new Box which has double the dims of the current box.
+
+eg : Box b1 is already created with dims  --10,20,30
+Create new Box having 20,40,60 as dims
+
+2. Add a method in Box class to check equality of 2 Boxes
+equality criteria --- all dims are same.
+
+Solve assignment

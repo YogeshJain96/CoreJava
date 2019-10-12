@@ -1,0 +1,68 @@
+static --- keyword in java
+Usages
+1. static data members --- Mem allocated only once @ class loading time --- not saved on object heap --- but in special mem area -- meta space . -- shared across all objects of the same class.
+Initialized to their default values(eg -- boolean -false,ref -null)
+How to refer ? -- className.memberName
+
+eg -- public static int idCounter;
+
+2. static methods --- Can be accessed w/o instantiation. (ClassName.methodName(....)) 
+Can't access 'this' or 'super' from within static method.
+
+Rules -- 1. Can static methods access other static members directly(w/o inst) -- YES
+2. Can static methods access other non-static members directly(w/o inst) -- NO
+3. Can non-static methods access other static members directly(w/o inst) -- YES
+eg : In Test class
+void test1() {test2();}
+static void test2(){
+ Test ref=new Test();
+ ref.test1();
+}
+
+
+3. static import --- Can directly use all static members from the specified class.
+eg --
+import static java.lang.System.*;
+main(...)
+{
+   out.println(.....);
+}
+
+
+4. static initializer blocks
+syntax --
+static {
+// block gets called only once @ class loading time
+// usage -- to init all static data members 
+//& can add functionality -which HAS to be called precisely once.
+Use case : singleton pattern
+Design pattern (Creational) ---Ensuring SINGLE instance of the class throughoput the application.
+Use case --- cache,device drivers, Loggers
+
+ , J2EE for loading hibernate frmwork.
+}
+
+They appear -- within class definition & can access only static members directly.(w/o inst)
+A class can have multiple static init blocks(legal BUT not reco.)
+
+
+Regarding non-static initilizer blocks(inst initilaizer block)
+syntax
+{
+//will be called per instantiation --- before matching constructor
+//Better alternative --- parameterized constructor.
+}
+
+5. static nested classes ---
+eg --
+class Outer {
+// static & non-static members
+  static class Nested
+  {
+     //can access ONLY static members of the outer class DIRECTLY(w/o inst)
+  }
+}
+----------
+
+
+
