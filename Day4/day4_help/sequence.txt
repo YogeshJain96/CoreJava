@@ -1,0 +1,204 @@
+Assignment status ????????????
+Revision
+1. Solve 
+What will be o/p ?
+class Assgnment
+{
+  psvm(..)
+  {
+   int num=1;
+   String name="abc";
+   test1(1);
+   name=test2(name);
+   sop(name+num);
+  }
+  static int test1(int no)
+  {
+    no++;
+    return no;
+  }
+  static String test2(String s)
+  {
+     s+= "xyz";
+     return s;
+  }
+}
+
+2. Revise inheritance
+What is it ?
+Why ?
+Types
+Constructor invocation in inheritance hierarchy .
+
+------------------------------------
+Install IDE 
+
+
+static 
+(refer to "regarding static" readme & solve rdy code.
+
+What will be o/p of TestStatic ?
+
+Continue with inheritance....
+
+Important statements
+Sub class IS A super class & something more(additional data members / methods) + something modified(method overriding)
+
+NO virtual keyword in java. (Meaning all java methods are implicitely virtual)
+
+BUT one can override (to achieve run time polymorphism) java methods in a sub class -- iff --they are not private or static or final.
+
+Javac resolves method binding by --type of the reference(early binding)
+
+JVM resolves method binding by type of the object (late binding)
+
+Super class reference can directly refer to ANY sub class objecte directly (w/o type casting) : as its example of up casting
+
+eg : Fruit ---Orange --MandarineOrange
+Fruit f=new MandarineOrange();//up casting 
+f.taste();
+
+
+Object class's toString
+What's the need of overriding toString?
+Examples in shapes & fruits.
+
+
+
+Object class API(method) --public String toString()
+What's the need of overriding toString
+--To replace hashCode (adr returning) version by actual object's details (eg : name,salary...) in a standard form.
+
+(refer to : Applying inheritance & polymorphism in readme)
+
+
+
+Regarding this & super 
+
+Polymorphism
+
+Method overloading vs overriding
+
+Easy overloading egs (rdy code)
+JAVAC rule --javac tries to resolve method binding by exact match. But in absence of exact match --tries to for closest match(using inheritance hierarchy)
+
+
+
+
+
+Solve this 
+
+class Test {
+public static void main(String[] args) {
+ test(1,2.45);
+ test(2,3);
+}
+private static double test(int i, double d) {
+  return 1;
+}
+
+private static double test(double d, int i) {
+ return 2;
+}
+}
+
+
+Solve this 
+class Test2 {
+
+public static  void doSomething(Object obj) {
+    System.out.println("1");
+}
+
+public static  void doSomething(char[] obj) {
+    System.out.println("2");
+}
+
+public static  void doSomething(Integer obj) {
+    System.out.println("3");
+}
+
+public static void main(String[] args) {
+  doSomething(null);
+}
+}
+-----------------------------------
+Upcasting (ref to its readme)
+=casting sub type into super type 
+It's always SAFE (automatic)--so javac doesn't need any cast.
+Why it's used ? --For flexibility / extensibility.
+
+Object ---Emp --Mgr ---SalesMgr
+
+Fruit --Mango/Orange
+eg : Emp e;
+e=new Emp(...);--super cls ref--->super cls obj
+e=new Mgr(....);//up casting --IS A
+
+Fruit f=new Orange();//up casting --IS A
+
+e=new SalesMgr(...);
+Mgr m=new SalesMgr(..);
+Object ref=m;//up casting --IS A
+ref="123.45";
+e=new Worker(...);//up casting
+m=new Worker(....);//javac err
+SalesMgr sm=new Mgr(...);//javac err
+
+
+Important stmt regarding working of javac & JVM
+
+1. Javac resolves method invocation(binding)  by the type of reference .
+BUT JVM resolves the method binding by the type of the object referred.
+
+2. super type ref can DIRECTLY (w/o type casting) refer to ANY sub type object.
+
+
+@Override annotation
+
+Confirm with simple example --upcasting & dynamic method dispatch.
+
+class Fruit
+{
+   public String taste()
+   {
+     return "undefined";
+   }
+}
+class Mango extends Fruit
+{
+   @Override
+   public String taste()
+   {
+     return "sweet";
+   }
+}
+class Orange extends Fruit
+{
+   @Override
+   public String taste()
+   {
+     return "sour";
+   }
+}
+class Tester
+{
+  p.s.v.main(...)
+  {
+     Fruit f=new Mango();
+     sop(f.taste());
+     f=new Orange();
+     sop(f.taste());
+  }
+}
+
+
+
+5. Announce a seat no & participant's specific work details should be invoked
+i/p seat no
+o/p work details or err mesg : invalid seat no
+
+10 : Exit
+
+-------------------------
+
