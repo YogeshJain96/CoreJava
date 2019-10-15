@@ -1,0 +1,12 @@
+1. Import day5 & day5_interfaces projects into your workspace.
+
+Revise from day 5 (understand javac errors)
+
+1. All testers for Fruit & then for Shape.
+
+Revise from day5_interfaces
+
+1. All packages from p1 to p5
+
+
+Solve assignments.

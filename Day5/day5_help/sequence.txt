@@ -1,0 +1,210 @@
+Assignment status ????
+Any help required ?
+TestOrg
+main(...)
+Emp[] emps=new Emp[sc.nextInt()];
+int counter=0;
+while(!exit)
+{
+  switch(sc.nextInt())
+  case 1
+  case 2  : if(counter < emps.length) {
+    sop (Enter worker dtls nm em....")
+   emps[counter++]=new Worker(...);
+} else
+ ....
+    
+  break;
+   case 3: //display all
+   for(Emp e : emps)//e=emps[0]
+   sop(e+" net sal ="+e.computeNetSal());//dym method dispatch
+
+  case 4 : sop("Enter emp id")
+  int index=sc.nextInt()-100;
+....
+ sop(emps[id]);
+break;
+
+case 5 : //update sal
+//I/P Emp id & basic salary increment
+  index=sc.nextInt()-100;
+ if(index < 0 || index >= counter)
+ ....
+else 
+ { 
+   Emp e =emps[index];
+   e.setBasic(e.getBasic()+inc);
+   sop(e.getName() +" sal updated....");
+ }
+  
+}
+
+
+
+{m1 ,w1,w2,m2,w3,w4,w5}
+
+4. Display employee specific details.
+I/P emp id
+O/P --  Display emp details or invalid emp id (error message)
+
+5. Salary Increment
+I/P Emp id & basic salary increment
+O/P --Updated salary or invalid emp id (error message)
+
+Revise
+
+What is Polymorphism ?
+What are different types of polymorphism?
+
+What is toString ?
+eg : Emp e =new Emp(id,name,salary);
+Object ref=e;
+Why will System.out.println(e) will automatically call e.toString ?
+
+solve 
+Emp <--Mgr <--- SalesMgr
+Suppose all of above classes have overridden toString , what will happen ?
+Object e =new Mgr(...);
+sop(e);
+e=new SalesMgr(...);
+sop(e);
+
+Compile time polymorphism achieved via 
+-- method overloading
+
+Run time polymprphism achieved via 
+-- method overriding
+
+
+
+
+Which methods can be overridden in Java ?  not private /static /final
+Can super class ref directly(w/o type casting) refer to ANY subtype object ?  --YES , due to upcasting
+eg : Fruit f=new Apple();
+Which members are accessible to such ref directly(w/o type casting) -- only those available in super class
+Fruit : taste --no specific taste
+Apple : taste --sweet
+jam() -- creating apple jam.
+
+Fruit f=new Apple();
+f.taste();
+f.jam();//javac err
+
+
+
+Can subtype ref directly refer to super type object ? --NO
+eg : Apple a =new Fruit();//javac err
+Javac resolves method binding by --- type of reference
+JVM resolves method binding by ---type of object
+Early binding takes place for ---private/static/final + duplicate data members(in inheritance hierarchy)
+
+------------------------
+Look at Fruit's inheritance hierarchy .
+Why have we added taste() in super class ?
+1. Keep common behaviour in super class
+2. standardization
+3. Flexibility
+
+Is there any better solution ?
+
+Enter abstraction
+
+Apply it to Fruits / Shapes & improve the solution.
+
+
+---------------------------------
+
+Solve 
+Class A
+{
+  public void show()
+  {
+    sop("super's show");
+  }
+}
+class B extends A
+{
+ @Override
+ public void show()
+  {
+    sop("sub's show");
+  }
+ public void test()
+ {
+  sop("in test");
+ }
+}
+class TestMe
+{
+  psvm(...)
+  {
+     A ref=new B();
+     ref.show();
+    ref.test();//what will happen?
+   
+  }
+}
+----------------------
+When will you get java.lang.ClassCastException ?
+(ref : javadocs)
+Trigger -- Anytime u  cast an object to a subclass of which it is not an instance
+eg : Fruit f=new Mango();
+((Orange)f).taste();//ClassCastException --- Mango can't be cast into Orange.
+
+eg : Mango m=(Mango)new Fruit();//no javac err --classcastexc ---Fruit can't be cast into Mango
+m.taste();
+--------------------------------
+
+
+How to avoid ClassCastException ?
+---instanceof keyword(ref : readme inheritance)
+OR
+---reflection API
+
+
+----------------------
+Refer to method oveloading vs method overriding
+refer to diagram.
+
+Enter Java interfaces
+
+Refer to "about interfaces" from interfaces help
+
+
+Implementation classes can DIRECTLY access i/f consts.
+
+I/F ref can DIRECTLY(w/o type casting) refer to ANY imple class instance.(i/f can't be instantiated) -- IS A -- up casting
+BUT it can DIRECTLY access only methods ---declared in i/f & Object class
+
+
+I/F DON'T extend from java.lang.Object class.
+I/Fs have direct access to ALL Object class methods(eg : toString,equals,hashCode,wait,clone....)
+
+
+----------------------
+Another important API of Object class
+public boolean equals(Object o)
+Refer to javadocs for details
+Important meaning -- Rets true in case of reference equality.
+
+What is the need of overriding equals method ?
+How ?
+(Later its connection with hashCode will be explained)
+------------------
+What is a co variance ? --Overrding form of the method can ret a sub type.
+
+example ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
