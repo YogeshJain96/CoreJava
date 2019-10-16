@@ -1,0 +1,13 @@
+Import day6 project in your workspace from day6_data
+1. Solve n revise all examples from package "method_overloading"
+
+2. Solve n revise co variance example from pkg "co_variance"
+
+3. Revise equals method from test_equals & test_equals2 pkg.
+
+4. Must solve this ASAP!
+Assignment 1 of Day6 (based on equals)
+
+5. Revise all code samples from pkg "exc_handling"
+
+6. Complete 2nd lab assignment.

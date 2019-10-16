@@ -1,0 +1,36 @@
+Exception handling
+why
+
+Flow
+String ss="abc";
+sop(Integer.parseInt(ss));
+
+
+Inheritance hierarchy
+
+
+checked vs un checked exceptions
+Keywords---try,catch,finally,throw,throws,try-with-resources
+Custom exception --need n steps
+
+1. Create custom exception class(SpeedOutOfRangeException) --in the package "cust_excs"
+
+2. Create TestSpeed in the package "exc" , with main method
+2.1 Using scanner , accept speed of the vehicle.
+2.2 Invoke "checkSpeed(int speed) --from within try --catch-all blcok in main
+
+2.3 Create static method , in the Utils class checkSpeed method --
+which should throw the custom exc if speed is out of range.
+Otherwise --display mesg --"Speed within range"
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+Revise
+Why Interfaces ?
+pure abstraction
+loose coupling(separation between specs and its imple.)
+alternative to multiple inh.
+What is it ? --blue print of the class
+What does it contain typically ?
+public static final --d.m
+public n abstract --methods
+Relationship between interfaces ---extends
+Relationship between class & interfaces ---implements
+Relationship between 2 classes ---extends
+Can one i/f extend from multiple super i/fs ? -- yes
+Can one class implement multiple i/fs ? -- yes
+Can one class extend from multiple super classes ? --no
+
+
+Method overloading vs method overriding
+(refer to a diagram & readme inheritance)
+
+Examples of method overloading
+eg ---
+class TestOverload {
+ void test(int i,int j){...}
+ void test(int i) {..}
+ void test(double i){..}
+ void test(int i,double j,boolean flag){..}
+ int test(int a,int b){...} 
+}  
+
+What is co variance or co variant return type ?
+(refer readme inheritance)
+Solve example
+
+
+Object class's equals method
+Solve 
+Emp e1 =new Emp(101,"abc",1000);
+Emp e2 =new Emp(101,"abc",1000);
+sop(e1.equals(e2));
+
+What's the need of overriding equals method ?
+refer to readme inheritance.
+
+Enter Exception handling
+
+Why ?
+1. separation between B.L (try block) & err handling logic(catch)
+2. To recover from run time errs(to continue with execution flow) -- business logic failure or validation errors
+
+Important topics (refer to readme)
+
+Flow, inh hierarchy, chked vs un chked excs 
+try , catch , finally, throw , throws
+custom  exceptions with example.
+
+Objective --- Check the speed of a vehicle running on a highway.
+speed lim --40 ---80
+Alerts -- speed too slow / fast
+1. Create custom exc class. --cust_excs
+2. Create ValidationUtils class --utils
+Add public static method 
+public static void checkSpeed (int speed) throws Exception
+{
+ ....
+}
+3. Tester 
+Scanner --accept speed & invoke check speed, within try-catch block
+Centralized err handling.
+
