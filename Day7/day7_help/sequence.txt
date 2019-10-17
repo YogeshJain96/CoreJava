@@ -1,0 +1,107 @@
+Revise
+Exception handling
+flow
+inheritance hierarchy
+Keywords --try,catch,finally,throw,throws ,try-with-resources
+eg : try(Scanner sc=new Scanner(...))
+{
+}
+checked vs unchecked excs
+Custom exceptions(user defined )
+
+
+Solve
+Objective -- Create simple banking system, to store account details.
+1.BankAccount class
+state -- acct no(string), customer name , type(currently string later enum) , balance (double) 
+creationDate(Date)
+constr & toString , n equals (based on acct no)
+
+B.L --withdraw,deposit,fundsTransfer, apply simple Interest.
+
+2. Validation Rules --
+2.1 A/C  type must be  -- saving/current/fd/loan/nro
+2.2 min balance = 1000
+2.3 a/c creation date must be before end of this year.
+
+
+3. Create TestBank1 , as a simple tester.
+Accept a/c details from user.
+ create customer's a/c --iff all validations succeed.
+o.w --display error mesg --- via custom exc.
+
+Design
+1. Custom exc class
+2. BankAccount --core functionality
+3. ValidationRules
+4. Tester
+
+--------------------------------
+
+
+String Handling
+Peer classes --java.lang.String / StringBuilder / StringBuffer
+String --- immutability, == vs equals , literal vs non-literal 
+
+String Class important methods
+charAt,contains,indexOf,lastIndexOf,compareTo, matches,subString,split....
+
+java.lang.String ---implements java.lang.Comparable<String>
+I/F method
+public int compareTo(String s2)
+{
+ rets --- <0 if this < s2
+ rets -- =0 if this.equals(s2) --true
+ rets -- > 0 if this > s2 (compared as per unicode vals)
+}
+
+Comparable i/f ---used for Natural ordering in Java.
+
+
+java.lang.StringBuilder --mutable char sequence.
+Has length() & capacity()
+Def init capa = 16 chars.
+
+
+----------------------------
+
+
+Date/Time Handling (refer to readme_date_varargs)
+java.util.Date 
+
+Date class constuctors --Date(), Date(long ms)
+Methods --toString,before,after,compareTo,equals,getTime
+
+
+
+Objective 
+Accept DOB from user in string form & display it.
+ java.text.SimpleDateFormat
+Steps for parsing(string-->date) & formatting(date--->string)
+1. Create instance of java.text.SimpleDateFormat
+constr
+SimpleDateFormat(String pattern)
+d--day
+MM --month(in digit 1-12 for Jan--Dec)
+MMM --month in abbrevation(eg -jan/feb/mar ...)
+MMMM -- complete month name.
+y- yr
+h --hour
+m -min
+s --sec
+ref : java.util.Formatter class for more dtls.
+eg : for <input type="date"...>
+SDF sdf=new SDF("yyyy-MM-dd");
+2. For parsing 
+public Date parse(String s) throws ParseException (chked exc)
+Throws exception --in case of invalid i/p as per the pattern.
+
+3. For formatting
+public String format(Date d)
+
+------------------------
+
+Enum in Java
+refer to readme  --regarding enums
+
+

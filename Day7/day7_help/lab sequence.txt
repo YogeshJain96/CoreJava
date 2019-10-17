@@ -1,0 +1,17 @@
+Import day7  into your workspace
+Revise
+1. Solve from "tester" package TestBank1 , to revise 
+exception handling & validation rules & overall structure of the application.
+
+2. Solve all testers from test_strings pkg.
+
+3. Solve all testers from test_dates pkg.
+
+Import day7.2 into your workspace.
+1. Solve from "tester" pkg TestBank , to revise date/time handling enums etc.
+
+
+4. Solve assignment.
+
+
+nested classes.
