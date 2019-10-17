@@ -15,7 +15,7 @@ public class Test2 {
 			System.out.println("Foramatted date " + sdf.format(dob));
 
 		} catch (Exception e) {
-			//e.printStackTrace();
+			e.printStackTrace();
 			System.out.println(e);
 		}
 

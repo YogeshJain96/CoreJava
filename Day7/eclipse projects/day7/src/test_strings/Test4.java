@@ -10,10 +10,11 @@ public class Test4 {
 		System.out.println(s.charAt(0));
 		System.out.println(s.charAt(s.length()-1));
 		System.out.println(s.contains("string"));
-		System.out.println(s.contains(new StringBuilder("api")));
-	    System.out.println(s.indexOf('t', 2));
-	    System.out.println("abc".compareTo("ABC"));
-	    System.out.println("abc".compareToIgnoreCase("ABC"));
+		System.out.println(s.contains(new StringBuilder("API")));
+	    System.out.println(s.indexOf('t', 1));//?
+	    System.out.println("compareto");
+	    System.out.println("abc".compareTo("ABC"));//?
+	    System.out.println("abc".compareToIgnoreCase("ABC"));//?
 	}
 
 }

@@ -11,6 +11,7 @@ public class Test1 {
 		System.out.println(d2);
 		System.out.println(d1.compareTo(d2));
 		System.out.println(d1.before(d2));
+		System.out.println(d1.after(d2));
 		System.out.println("ms elapsed after epoch "+d1.getTime());
 
 	}
