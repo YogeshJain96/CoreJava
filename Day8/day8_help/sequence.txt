@@ -1,0 +1,131 @@
+Revise
+Solve
+String s="hello";
+s.concat(" , abc ");
+sop(s);
+
+String s2="hello";
+sop(s.equals(s2));
+sop(s==s2);
+String s3=new String("hello");
+sop(s==s3);
+
+
+class Example1 {
+// Assume this application is invoked with one command-line
+// argument, the string "Hi!".
+public static void main(String[] args) {
+String argZero = args[0];//non literal string created @ run time
+String literalString = "Hi!";//literal string added @ cls loading time
+if (argZero == literalString) 
+ System.out.println("same");
+else 
+ System.out.println("different ");
+argZero = argZero.intern();
+System.out.print("After interning ");
+if (argZero == literalString) 
+ System.out.println("now same");
+else 
+ System.out.println("still different");
+}
+}
+
+Enums in Java
+Why ?
+to list set of related constants.
+iteration easy
+type safety
+asso along with enum names + values.
+
+syntax -- nested within a class or can exist separately.
+Which is implicit super class ? -- java.lang.Enum
+protected Enum(String name,int ordinal)
+Invoked auto --upon loading enum constants.
+
+which methods are added by javac ?
+1. public static Enum[] values()
+2. public static Enum valueOf(String s) throws IllegalArgExc.
+
+eg : public enum Course {
+  DAC,DBDA,DAI,DMC,DITISS
+}
+Run de compiler to understand its internals .
+-------------------------
+Wrapper classes in Java
+refer to its readme
+Is everything Object in Java ? --- NO
+Can everything(prim types/ref types) be accessed by Object type of a ref ? --YES
+-------------------------
+
+Var args
+refer to "readme_date_varargs"
+----------------
+Nested classes in Java 
+
+Why ?
+Inner classes(non static nested classes) are used for logical grouping of classes. 
+It improves encapsulation and readability of the code.
+inner class = non static nested class
+
+syntax of inner's ref ? --- Outer.Inner
+which classes ? -- Outer.class , Outer$Inner.class
+
+legal access specfiers for inner classes --private /default(no)/protected /public
+
+can inner class contain static methods? --NO
+can inner class contain static data members? NO 
+JDK 1.8 onwards allows to create  static & final data members.
+Can outer class access,  private instance members of inner class directly(w/o inst) ? --- NO
+Can inner class access private instance members of outer class directly ? --- YES
+
+Outer class --non static method --how to access inner's memebrs  ? --via inner cls's instance
+
+
+Outer class -- static method --how to access inner's memebrs  ?
+eg : Outer.Inner in=new Outer(..).new Inner(...);
+in.method();
+
+------------------------
+Introduction to generics
+Why generics with example
+---------------------
+Enter Collection framework.
+
+Understand why ?
+What is it ?
+Overview of Collection frmwork ?
+List<E> implementation classes
+--ArrayList<E> , LinkedList<E> , Vector<E>
+------------------------------
+Simple Objective first
+Use API of ArrayList with Integer(Java library class)
+1. Create empty AL to hold ints.
+2. Populate it.(eg : from int[] --later from user)
+3. Display AL contents via
+toString
+for loop
+for-each
+4. Check if specific element exists
+5. Display index of 1st & last occurrence of a specific element.
+6. Create empty LinkedList.
+7. Populate this linked list from AL contents.
+8. Double elems of AL if elem > 10
+9. Remove specific elem
+10. Sort AL in asc order.
+11. Convert AL ----> array (using generic method)
+
+--------------------
+Pending
+
+Later replace it by UDT(user defined type )
+Objective -- Store bank account information in a suitable data structure (to support index based operations)
+Options 
+1. Create new a/c
+2. display all accts summary --via for-each
+3. Fetch A/C summary
+i/p a/c no o/p --acct dtls or err mesg (via custom exc)
+4. 
+10. Exit
+
+
+

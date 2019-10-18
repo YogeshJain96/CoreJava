@@ -1,0 +1,9 @@
+Import day8 project into your eclipse workspace.
+
+1. Revise code samples of wrappers , var-args & inner class in 15 minutes.
+
+2. Understand need of generic classes 
+with example
+
+3. Solve IntegerList example, taking help from javadocs.
+
