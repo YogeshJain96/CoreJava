@@ -1,0 +1,72 @@
+Import day8 project into your eclipse workspace.
+
+1. Revise code samples of wrappers , var-args & inner class in 15 minutes.
+
+Solve 
+Use Arrays.asList method to convert
+int[] ints={4,5,12,45,67,890};
+into fixed size list.
+Display list elems using for-each.
+
+
+2. Understand need of generic classes 
+with example
+Solve 
+Create raw(non generic ) ArrrayList
+ArrayList l1=new ArrayList();
+//add int,string,date to the list
+String s=l1.get(0);
+
+
+3. Solve IntegerList example, taking help from javadocs.
+
+Solve 
+Copy project day7_lab into day8.2_lab
+Write a new Tester in "lists" package for the following
+1. Create suitable D.S to store student info.
+2. Supply options
+2.1 Register new student, with validations
+2.2 Display all students' info (via for-each)
+20 : Exit
+Template structure in Tester
+psvm(...)
+{
+ try(Scanner sc=new Scanner(System.in)
+ {
+    //init Data structure
+    AL<Student> students=new AL<>();
+    boolean exit=false;
+    while(!exit) {
+     try {
+      sop("Options : ...");
+      sop("Enter your option");
+      switch(sc.nextInt()) {
+       case 1: //register student 
+              break;
+       case 2: //display all
+              break;
+       case 20 : exit=true;
+              break;
+      } 
+     } catch-all
+  
+    }
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

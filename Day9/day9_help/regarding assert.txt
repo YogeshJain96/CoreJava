@@ -1,0 +1,44 @@
+The Java assert keyword allows developers to quickly verify certain assumptions or state of a program.
+
+Typical use case -- in writing test cases.
+
+It can drastically reduce boilerplate and make our code more readable.
+
+eg : 
+Connection conn = getConnection();
+if(conn == null) {
+    throw new RuntimeException("Connection is null");
+}
+Using assertions we can remove the if and throw statement with a single assert statement.
+
+Enabling Java Assertions
+
+JVM disables assertion validation by default. They must be explicitly enabled using either the -enableassertions command line argument, or its shorthand -ea:
+
+To add assertions, simply use the assert keyword and give it a boolean condition:
+
+public void setup() {
+    Connection conn = getConnection();
+    assert conn != null;
+}
+
+Java also provides a second syntax for assertions that takes a string, which will be used to construct the AssertionError if one is thrown:
+
+public void setup() {
+    Connection conn = getConnection();
+    assert conn != null : "Connection is null";
+}
+In both cases, the code is checking that a connection to an DB returns a non-null value. If that value is null, the JVM will automatically throw an AssertionError.
+
+The class AssertionError extends Error (Error & its sub types represent un checked exceptions --javac doesn't force handling of the same)
+
+i.e  methods that use assertions are not required to declare them in throws , and further calling code should not try and catch them.
+
+AssertionErrors are meant to indicate unrecoverable conditions in an application, so never try to handle them or attempt recovery.
+
+The most important thing to remember about assertions is that they can be disabled, so never assume they’ll be executed.
+
+Assertions vs Exceptions
+
+Use assertions for internal logic checks within your code(typical use case --Unit Testing or while passing arguments to the private method), and normal exceptions for error conditions outside your immediate code's control.
+

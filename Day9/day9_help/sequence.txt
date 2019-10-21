@@ -1,0 +1,52 @@
+Revise
+Example of creating enum within a class
+Collection Framework overview
+List<E> features
+ArrayList constructors
+ArrayList Vs LinkedList
+
+Solve
+Objective -- Store bank account information in a suitable data structure (to support index based operations)
+Options 
+1. Create new a/c( add)
+2. display all accts summary --via for-each
+2.5 Write a new class CollectionUtils , to return a populated AL with sample data.
+eg : public static AL<BA> populateAccounts() 
+{
+  try--catch
+}
+3. Fetch A/C summary
+i/p a/c no o/p --acct dtls or err mesg (via custom exc)
+
+3.5 Add new validation rule
+No duplicate acct id.
+
+4. Funds Transfer 
+i/p src dest accno & amt
+o/p sucess mesg or err mesg via custom exc.
+5. Close Account
+i/p acct no
+o/p sucess mesg or err mesg via custom exc.
+In order to remove repeatative code , 
+Write a method in  CollectionUtils to get account details by acct id.
+If account found , return BankAccount reference or in case of error , throw custom exception.
+
+6. Sort the account as per account no
+7. Sort the account as per account balance(w/o touching UDT)
+8. Sort the account as per account creation date & balance
+9. Apply interest to all specified type of a/cs (eg :saving or FD )
+10. Exit
+
+From API docs of Collections class 's sort method
+
+This implementation is a stable, adaptive, iterative mergesort that requires far fewer than n lg(n) comparisons when the input array is partially sorted, while offering the performance of a traditional mergesort when the input array is randomly ordered.
+------------------------------------
+Pending
+
+
+Enter Sets
+Set features & implementation classes.
+
+
+Show type erasure using de compiler.
+Regarding "assert" keyword in java.

@@ -1,0 +1,149 @@
+Revise (by solving assignment)
+TestStudents
+ArrayList<Student> students=populateData();
+1 : students.add(new Student(validatePRN(sc.next(),students....);
+
+2 : 
+Course c=Course.valueOf(sc.next());
+for(Student s : students)
+  if(s.getCourse().equals(c))
+    sop(s);
+OR using Java 8
+students.stream().filter(s->s.getCourse().equals(c)).forEach(System.out::println);
+
+3. update marks
+int index=students.indexOf(new Student(prn));
+if(index==-1)
+ throw ...
+students.get(index).setMarks(sc.nextDouble());
+
+4. for(Student s : students)
+  if(s.getCourse().equals(c) && s.getDOB().after(dob))
+    sop(s);
+
+5 : Student s=new Student(prn);
+if(!students.remove(s))
+ throw 
+success mesg
+
+6 :
+Student imple Comaprable<Student>
+@Override
+public int compareTo(Student s)
+ return this.prn.compareTo(s.prn);
+
+Collections.sort(students);
+
+7. public class StudentDOBMarkComp imple Comparator<Student>
+@Override
+public int compare(Student s1,Student s2)
+{
+   int ret=s1.getDOB().compareTo(s2.getDOB());
+   if(ret != 0)
+    retrun ret;
+  return ((Integer)s1.getMarks()).compareTo(s2.getMarks());
+}
+StudentDOBMarkComp comp=new StudentDOBMarkComp();
+Collections.sort(students,comp);
+
+
+Help
+Collectiions 's method
+public static <T> T max(Collection<? extends T> coll,
+                        Comparator<? super T> comp)
+Returns the maximum element of the given collection, according to the order induced by the specified comparator. 
+
+
+public class StudentMarkComp imple Comparator<Student>
+@Override
+public int compare(Student s1,Student s2)
+{
+  
+  return ((Integer)s1.getMarks()).compareTo(s2.getMarks());
+}
+
+//filter students by course
+AL<S> l1=new AL<>();
+for(Student s : students)
+  if(s.getCourse().equals(c))
+    l1.add(s);
+//l1 -- dac students
+sop("Topper :"+Collections.max(l1,new StudentMarkComp()));
+
+OR
+
+students.stream().filter(s->s.getCourse().equals(c)).max((s1,s2)->((Integer)s1.getMarks()).compareTo(s2.getMarks()));
+
+
+
+ValidationRules for detecting dup prn
+public static String validatePRN(String prn,AL<S> l1) ...
+{
+Student s=new Student(prn);
+  if(l1.contains(s))
+   throw new ...;
+  return prn;
+}
+---------------------------------
+Enter Sets
+Set features & implementation classes.
+HashSet
+public HashSet(Collection<? extends E> c)
+Creates a new populated HS of type E , from ANY Collection (AL/LL/Vector/HS/LHS/TS) of generic type E or its sub type.
+eg : DacStudent extends Student
+AL<DacStudent> l1=new AL<>();
+populate list
+
+HS<Student> hs=new HS<>(l1);
+
+To understand internals of hashing algorithm,
+1. Create simple emp class --id,name,salary.
+Add constr & toString
+
+2. Create Tester
+2.1 Create empty HS to store emp info.
+2.2 Add dups & observe.
+
+Revise entire hashing algorithm with internal memory pic & code.
+---------------------------------
+Enter Maps (to see the similarity between HashSet & HashMap)
+
+public HashMap(Map<? extends K,? extends V> m)
+--Creates populated HM<K,V> from ANY Map(any map imple class eg : HM/LHM/TM) of generic type  K or its sub type & V or its sub type)
+
+eg : Hashtable<Integer,FootballPlayer> fbPlayers=new Hashtable<>();
+hire some players....
+
+HM<Integer,Player> players=new HM<>(fbPlayers);
+
+Solve :
+Create suitable HM to store bank account info.
+HM<String,BankAccount> hm=new HM<>();
+populate map
+n confirm working of put vs putIfAbsent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Show type erasure using de compiler.
+Regarding "assert" keyword in java.

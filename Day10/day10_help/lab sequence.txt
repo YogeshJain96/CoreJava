@@ -1,0 +1,17 @@
+1. Import all eclipse projects day10,day10.1,day10.2 in your workspace
+
+Revise hashing algoritm , along with mem pics.
+
+2. Revise from day10  --has poor implementation of hashCode
+Hashing algorithm in java , using HashSet of emps.
+
+
+3. Import eclipse project day10.1 in your workspace
+--has better implementation of hashCode
+(replace PK of emp from id to composite PK consisiting of id & name & solve) 
+
+4. Import eclipse project day10.2 in your workspace
+
+Revise HashMap CRUD operations & hashing algorithm along with mem pics.
+
+5. Solve HM based assignment.

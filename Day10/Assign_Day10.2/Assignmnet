@@ -1,0 +1,20 @@
+Assignment 10
+
+create new project day10.2lab
+copy student,custom exec,collection utils,validation rules
+
+2.1. New Student admission
+Check for duplicate PRN . (add a rule in ValidationRules class)
+
+2.2 Display student details
+I/P PRN
+O/P --student details or err mesg via custom exception
+
+
+2.3  Update student marks
+I/P --prn & new marks
+O/P success message or err message via custom exception
+
+2.4 Cancel Admission
+I/P --prn 
+O/P success message or err message via custom exception
