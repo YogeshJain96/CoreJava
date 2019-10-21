@@ -44,9 +44,3 @@ In the same for-each , invoke drawArc for a circle or diagonals for a rectangle 
 
 
 
-
-
-
-
-
-
