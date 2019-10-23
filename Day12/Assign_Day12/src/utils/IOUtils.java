@@ -1,6 +1,7 @@
 package utils;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -13,8 +14,10 @@ public class IOUtils {
 		//Read From File
 		try (ObjectInputStream Oin=new ObjectInputStream(new FileInputStream("custInfo.ser")))
 		{
-			temp= (HashMap<String, Customer>) Oin.readObject();
-		} catch (Exception e) {
+			temp=(HashMap<String, Customer>)Oin.readObject();
+		} catch (FileNotFoundException e) {
+            
+        }catch (Exception e) {
 			e.printStackTrace();
 		}
 		

@@ -6,7 +6,6 @@ import java.util.HashMap;
 
 import javax.xml.ws.ServiceMode;
 
-import bin_io.Address;
 
 @SuppressWarnings("serial")
 public class Customer implements Serializable {

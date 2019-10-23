@@ -122,6 +122,7 @@ public class CustTester {
 						System.out.println("Data Not Saved");
 				}
 				System.out.println("Good Bye!");
+				exit=true;
 				break;
 			default:System.out.println("Invalid Choice");
 				break;
