@@ -1,0 +1,8 @@
+Import all day 11.1 eclipse project into your workspace.
+
+1. From day11.1 , completely revise all options , along with javadocs.
+
+2. Revise I/O code sample.
+
+3. Solve customer based assignemnt.(MUST complete at least 1,3,4,5,6)
+

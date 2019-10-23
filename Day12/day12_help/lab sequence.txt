@@ -1,0 +1,25 @@
+Import day12 eclipse projects into your workspace.
+
+Revise 
+Text file copy
+Bin I/I using Data I/O Streams 
+Serialization n de-serialization
+
+
+1.
+Try this
+Create chain of streams 
+DOS--FOS --Bin File 
+Write ints from 1 to 100. 
+Display file contents.
+How will u read using Java API ?  --DIS
+ Now try this
+Create chain of streams 
+PW--FOS --Bin File(or text ???????) 
+Write ints from 1 to 100. 
+Display file contents.
+How will u read using Java API ?  --- SC / BR
+
+2. Solve assignment.
+
+

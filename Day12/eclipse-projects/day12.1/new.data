@@ -1,0 +1,45 @@
+Revise 
+I/O overview
+File read in buffered manner
+BR br=new BR(new FR(sc.nextLine());
+Read data from console i/p till "exit" --buffered manner.
+BR br=new BR(new ISR(System.in));String s=null;
+
+while(!(s=br.readLine()).equals("exit"))
+ sop(s);
+
+while((s=br.readLine())!=null)
+ sop(s);
+
+-------------------
+File copy --text files , in buffered manner
+BR--FR --src text file
+PW-FW-dest text file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bin I/O
+Data I/O streams 
+Object streams
+
+Assignment discussion (HM based)

@@ -1,0 +1,116 @@
+Revise 
+I/O overview
+File read in buffered manner
+BR br=new BR(new FR(sc.nextLine());
+Read data from console i/p till "exit" --buffered manner.
+BR br=new BR(new ISR(System.in));String s=null;
+
+while(!(s=br.readLine()).equals("exit"))
+ sop(s);
+
+while((s=br.readLine())!=null)
+ sop(s);
+
+-------------------
+File copy --text files , in buffered manner
+BR--FR --src text file
+PW-FW-dest text file
+
+1. public abstract int read()  throws IOException
+Tries to read next byte from i/p stream
+No data --- BLOCK
+Rets byte in range of 0-255
+-1 -- rets at End of stream
+eg : int data = System.in.read();
+OR
+FIS fin=new FIS("some bin ile name");
+int data =fin.read();
+
+2. public int read(byte[] bytes) throws IOException
+Rets no of bytes read from the i/p stream.
+Data is stored in byte[].
+eg : byte[] data=new byte[100];
+int n=System.in.read(data);
+ NO data -- BLOCK
+10 bytes  -- n=10;data[0]....data[9]
+120 bytes ---n=100;data[0]....data[99]
+
+3.  public int read(byte[] bytes,int offset,int length) throws IOException
+
+eg : byte[] data=new byte[100];
+int n=System.in.read(data,10,15);
+ NO data -- BLOCK
+10 bytes  --n=10;data[10]...data[19]
+120 bytes --n=15;data[10]....data[24]
+
+4. public int available() throws IOException
+Rets available no of bytes in i/p stream
+(non blocking)
+
+5. public void close() throws IOException
+
+API of java.io.OutputStream
+1. public void write(int byte) throws IOException
+2. public void write(byte[] bytes) throws IOException
+3. public void write(byte[] bytes,int offset,int length) throws IOException
+eg : FOS out=new FOS("emps.data");
+out.write(1234);//1 byte is written to file
+4. public void flush() throws IOException (applicable to buffered strms)
+5. public void close() throws IOException
+-----------------------
+Solve 
+Write emp info to bin file in buffered manner.
+Emp e=new Emp(.....);
+
+
+BOS out=new BOS(new FOS(sc.nextLine());
+ API of java.io.DataOutputStream --class --implements DataOutput i/f
+Constructor
+1. DataOutputStream(OutputStream out)
+Converter stream . Mixed data strm.
+eg : DOS out =new DOS(new BOS(new FOS(fileName)));
+OR
+BOs out=new BOS(new DOS(new FOS(fileName)));//useless
+
+
+
+
+How to use DOS for sending data to a socket , in un buf manner?
+DOS out=new DOS(s.getOutputStream());
+
+Methods
+public void writeInt(int i) throws IOException
+public void writeShort(short i) throws IOException
+public void writeBoolean(boolean i) throws IOException
+public void writeDouble(double i) throws IOException
+public void writeUTF(String i) throws IOException
+--UTF8 conversion
+...
+
+Restore the same .
+int data=in.readInt();String s=in.readUTF();
+
+java.io.DataInputStream implements DataInput
+Constr
+DataInputStream(InputStream in)
+Methods
+public int readInt() throws IOException
+public double readDouble() throws IOException
+public float readFloat() throws IOException
+public String readUTF() throws IOException
+
+
+Scanner sc=new Scanner(new FileInputStream(fName));
+int data=sc.nextInt();
+
+
+Objective -- HM<Integer,Emp> hm , populate --store it in bin file using serialization.
+OOS out=new OOS(new FOS("emps.ser"));
+
+
+
+
+
+
+
+

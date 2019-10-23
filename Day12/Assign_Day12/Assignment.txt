@@ -1,0 +1,46 @@
+New Scenario
+Day 11
+1. Create java application for customer management .
+
+1.1 Customer class 
+data members -- email(unique),password , reg amount,regDate(Date), type (enum : SILVER/GOLD/PLATINUM)
+address(home address , office address,....)
+Provide suitable constr to accept all details excluding address.
+(Customer HAS-A Address)
+How will you add multiple addresses?
+Address -- city,state,country,phoneNo,type
+Add a method linkAddress, to assign address to customer
+eg : In Customer class ,
+public void linkAddress(String city,String state,String country,String phoneNo,String type)
+
+1.2 Currently no validation rules.
+Can supply conversion methods in a separate class(string -->date , string--enum)
+
+1.3 Create a Tester for following options
+Start with hardcoded customers stored in suitable D.S (later restore it from bin file)
+1. Register new customer
+I/P --customer details
+2. Link Address(Try last!)
+customer email , password , adr details
+3. Customer Login
+customer email , password ,
+4. Un subscribe customer
+customer email , password ,
+5. Display all customers of a particular type
+I/P -- type (silver/gold/platinum)
+6. Update Address(Try last!)
+
+7. Sort customers as per email
+8. Sort customers as per reg date.
+
+2. Revise data read from text file.
+
+3. Try this
+Read data from std input (console i/p) & display it ,  till user says exit.
+
+
+Day 12
+Continue with day11 assignment & add persistence , using Object streams.
+(When application starts , restore customer info from bin file. Before terminating , store customer info into a bin file)
+
+Create separate class IOUtils , to add static methods for the same.

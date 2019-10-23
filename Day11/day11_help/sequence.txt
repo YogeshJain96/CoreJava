@@ -1,0 +1,111 @@
+Revise
+Map<K,V> features & implementation classes.
+no dup keys,dup vals
+NOT index based D.S
+doesn't extend from Collection i/f BUT its integral poart of Collection framrwork.
+can't attach iterator/for-each not possible (till Java 8)
+key --value(one to one)
+
+Hashing algorithm using hashmap
+Contract between hashCode & equals
+equal objs MUST produce SAME hash code
+ref1.equals(ref2)
+true ---ref1.hashCode()=ref2.hashCode()
+MUST
+Optional
+ref1.equals(ref2)
+false
+ref1.hashCode()!=ref2.hashCode()
+(ensures lesser hash collisions)
+
+Map API --- put,putIfAbsent,get,containsKey,containsValue,size,isEmpty
+HM constrs
+1. HM<Integer,String> hm=new HM<>();
+sop(hm.put(1,"aa"));
+sop(hm.put(56,"ab"));
+sop(hm.put(2,"ac"));
+sop(hm.put(47,"ad"));
+sop(hm.get(2));
+-----------------------------
+limitations of Map
+1. can't iterate over map directly
+2. remove/search/sort based on key --direct API(remove(k),get(k)/containsKey(k),TM) exists
+BUT for value based  remove/search/sort -- no direct API
+soln -- convert map ---> collection view
+keySet(),values(),entrySet()
+HM<Integer,String> hm=new HM<>();
+....
+Set<Integer> keys =hm.keySet();
+Collection<String> vals  =hm.values();
+Set<Map.Entry<I,S>> entries    =hm.entrySet();
+
+
+Solve CRUD & objectives similar to that with AL
+Sorting as per key based criteria
+
+Instead of creating a separate class
+create anonymous inner class-- nameless inner class --entire cls def is embedded within single java stmt.
+eg : 
+TreeMap<S,BA> tm=new TreeMap<>(new Comparator<String>()  {
+@Override
+ public int compare(String accNo1,String accNo2)
+ {
+    return accNo2.compareTo(accNo1);
+ }
+}
+);
+
+new Comparator<String>()  ---- instance of a class that implements Comparator<String>.
+
+OR
+TreeMap<S,BA> tm=new TreeMap<>((k1,k2)->k2.compareTo(k11));
+-----------
+Sorting map as per value based criteria
+
+Collection<BankAccount> collAccts=accts.values();
+AL<BA> l1=new AL<>(collAccts);
+Collections.sort(l1,new Comp<BA>()
+{
+   compare(a1,a2)
+   {...}
+});
+-------------------
+For a quick recap 
+Try this !
+Mango m=(Mango)new Fruit();//class cast exc --- fruit can't be cast into Mango
+
+--------------------
+Enter I/O
+Devices overview
+Concept of streams
+Different types of streams
+java.io package & its details
+Simple objectives
+1. Accept file name from user & read its data till EOF , in buffered manner & display the same.
+BR br=new BR(new ISR(System.in));
+String line="";
+while(!(line=br.readLine()).equalsIgnoreCase("quit"))
+  sop(line);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
