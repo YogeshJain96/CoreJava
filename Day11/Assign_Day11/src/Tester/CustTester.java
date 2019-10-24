@@ -106,7 +106,7 @@ public class CustTester {
 				} 
 				break;
 			case 7:{
-				System.out.println("7. Sort customers as per email");
+				System.out.println("Sorted customers as per email");
 				TreeMap<String,Customer> tm =new TreeMap<>(custHM);
 				tm.forEach((k, v) ->System.out.println(k+" : "+v));
 				}
