@@ -4,6 +4,8 @@ import java.util.HashMap;
 import static utils.CollectionUtils.populate;
 import static utils.CollectionUtils.printType;
 import java.util.Scanner;
+import java.util.TreeMap;
+
 import core.app.*;
 import static cust_execs.Validation.*;
 
@@ -99,7 +101,9 @@ public class CustTester {
 				} 
 				break;
 			case 7:
-				System.out.println("7. Sort customers as per email"); 
+				System.out.println("7. Sort customers as per email");
+				TreeMap<String,Customer> tm =new TreeMap<>(custHM);
+				tm.forEach((k, v) ->System.out.println(k+" : "+v));
 				break;
 			case 8:
 				System.out.println("8. Sort customers as per reg date.");
