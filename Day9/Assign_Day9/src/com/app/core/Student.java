@@ -34,7 +34,7 @@ package com.app.core;
 
 import java.util.Date;
 
-public class Student {
+public class Student implements Comparable<Student> {
 	private String prn, name, email;
 	private CourseType course;
 	private int marks;
@@ -77,11 +77,21 @@ public class Student {
 		this.marks=newmarks;
 		return true;
 	}
+	public Date getDOB() {
+		return this.dob;
+	}
 	public int getMarks() {
 		return this.marks;
 	}
 	public String getCourse() {
 		return this.course.toString();
+	}
+	// implementing N.O using compareTo
+	@Override
+	public int compareTo(Student Other) {
+		// <0 , =0 , > 0
+		System.out.println("N.O. compareTo");
+		return prn.compareTo(Other.prn);
 	}
 }
 	
