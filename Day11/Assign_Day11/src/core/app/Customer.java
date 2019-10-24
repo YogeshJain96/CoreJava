@@ -3,7 +3,7 @@ package core.app;
 import java.util.Date;
 import java.util.HashMap;
 
-public class Customer {
+public class Customer{
 	//data members -- email(unique),password , reg amount,regDate(Date), type (enum : SILVER/GOLD/PLATINUM)
 	//address(home address , office address,....)
 	private String email,password;
@@ -40,6 +40,12 @@ public class Customer {
 	}
 	public String getType() {
 		return type.toString();
+	}
+	public Date getRegDate() {
+		return this.regDate;
+	}
+	public double getRegAmt() {
+		return this.regAmount;
 	}
 	public String getEmail() {
 		return email;
