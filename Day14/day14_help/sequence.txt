@@ -1,0 +1,195 @@
+Assignment status ??????????
+Revise
+Thread State Transitions 
+doesn't exist -- NEW ---RUNNABLE(ready to run --pool of rdy thrds + running) 
+
+ Running <---> Rdy to run 
+yield -- 
+eg : Thread.yield()
+--requests for Running ---> Rdy to run
+It may release CPU BUT doesn't release the locks
+
+Dead -- run() rets
+dead thrds can't be re-started --- IllegalThrdstateExc.
+
+
+
+BLOCKED -- 
+blocked on sleep
+blocked on I/O
+
+Different ways of creating threads(with eg)
+extends Thread 
+imple Runnable 
+
+What will happen if a cls imple Runnable & deosn't override run ? --javac err
+
+What will happen if a cls extends Thread  & doesn't override run ? -- no err --thrd will be created & become dead immediately (blank run())
+
+What will happen if u call run() instead of start() ?
+--no javac err / no run time err 
+--no multi threading (all tasks will be done by main)
+
+
+Method overriding & checked exceptions (solve with eg) -- 
+class A
+{
+   void show() throws Exception
+   {
+      sop("1");
+     Thread.sleep(123);
+   }
+}
+class B extends A
+{
+   @Override
+   public void show() 
+   {
+   try {
+      System.in.read();
+      sop("2");
+   }
+  catch(..){..}
+}
+class C extends B
+{
+ void show() throws Exception
+   {
+      sop("3");
+   }
+}
+
+-------------------
+Attaching Iterator / ListIterator to collection/List
+refer to collections readme.("Regarding exceptions with Iterator/List")
+How to attach ListIterator to any List implentation classes ?
+1. public ListIterator<E> listIterator()
+--places the cursor before 1st elem.
+
+2. public ListIterator<E> listIterator(int index)
+--places the cursor before specified index.
+
+Methods
+1. public boolean hasPrevious()
+2. public E previous();
+3. public in previousIndex();
+4. public in nextIndex();
+.....
+
+Solve 
+Display list elems in reverse order.
+--------------------
+
+Thread related API
+constrs
+Thread() -- un-named --name assigned by JVM
+Thread(String nm)
+
+Thread(Runnable inst)
+Thread(Runnable inst,String name)
+eg : public class WorkerTask imple Runnable
+{
+   public void run()
+   {...}
+}
+Thread t1=new Thread(new WorkerTask(....),"thrd1");
+t1.start();
+
+eg : public class NewThread extends Thread
+{
+   public void run()
+   {...}
+}
+Tester --main
+Thread t1=new NewThread();//NEW
+t1.setName("thrd1");
+t1.start();
+
+
+
+Methods
+currentThread
+getName/setName
+getPriority/setPriority
+toString
+yield
+sleep
+join
+interrupt
+
+
+
+Understand ---join / interrupt & threads blocked on join /sleep /io
+1. Create a thread to accept i/p from user
+System.in.read() --- t1
+2. Create t2 --- which waits for t1 to finish exec.
+3. main -- wait for child thrds to finish exec.
+
+
+What happens when multiple threads are accessing shared resources ?
+eg : Create a joint  account , shared between 2 customers(represented by 2 threads)
+one joint a/c holder updating balance & other checking balance concurrently.
+
+Design
+
+1. Account class -- balance
+Methods --update balance (withdraw --dly --deposit)
+ & check balance.
+
+2. Tasks
+2.1  UpdateBalanceTask (imple. Runnable)
+Constr --Accept shared A/C ref
+run -- invoke repeatedly(while true) --update balance of a/c 
+
+2.2  CheckBalanceTask (imple. Runnable)
+Constr --Accept shared A/C ref.
+run -- invoke repeatedly (while true) --check balance of a/c 
+If balance != orig balance --terminate JVM
+
+3. Tester --
+Create 1 a/c instance , pass it 2 thrds(attached to tasks) , strt thrds 
+Wait for the thrds to finish exec.
+
+Observe n conclude.
+
+
+
+Synchronization=applying thread safety.
+Synchronization is essential -- in multi threaded application , when multiple threads are sharing a common resource(Application eg : online reservation system) , some threads are reading & some are writing/updating the resource
+
+It's required to avoid race condition , within a critical section.
+How ? 
+Using java keyword --synchronized
+2 techniques for locking
+1. synchronized methods
+2. synchronized blocks.
+
+Important Facts
+1. Any java object can be associated with a lock(monitor)
+2. Any thread has to acquire a lock(=enter a monitor) , while invoking either synchronized method / block.
+3. A thread invoking sleep/join/yield/notify/notifyAll or undergoing context switching(from running--->rdy) , may release CPU , but doesn't release the lock.
+(Informal way --sleeping thread sleeps inside the monitor or doesn't release the lock)
+----------------------------
+Pending
+Need of synchronized blocks
+If you are using any thread un-safe API(eg : StringBuilder,ArrayList,LinkedList,HS,TS,LHS,HM,LHM,TM) in a multi-threaded application , to apply thrd safety externally , use synched blocks.
+syntax :
+synchronized(obj to be locked/shared resource ref)
+{
+  //invoke method of shared resource in thrd safe manner.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
