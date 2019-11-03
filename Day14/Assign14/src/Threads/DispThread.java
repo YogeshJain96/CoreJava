@@ -17,21 +17,36 @@ public class DispThread extends Thread {
 		ArrayList<Emp> tempAL = null;
 		try {
 			Thread.sleep(500);
+			System.out.println("\n\n");
 			System.out.println("/****** DE-SERIALIZATION ******/");
-			try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("FileByDept.txt"))) {
+			try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("t1.txt"))) {
 				tempAL = (ArrayList<Emp>) in.readObject();
 			}
-			System.out.println("FileByDept");
+			System.out.println("FileByName");
 			for (Emp e : tempAL)
 				System.out.println(e);
 
-			try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("FileBySal.txt"))) {
+			try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("t2.txt"))) {
 				tempAL = (ArrayList<Emp>) in.readObject();
 			}
+			
 			System.out.println("\n");
+			
 			System.out.println("FileBySal");
 			for (Emp e : tempAL)
 				System.out.println(e);
+			
+			
+			try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("t3.txt"))) {
+				tempAL = (ArrayList<Emp>) in.readObject();
+			}
+			
+			System.out.println("\n");
+			
+			System.out.println("FileByHiredate");
+			for (Emp e : tempAL)
+				System.out.println(e);
+			
 		} catch (Exception e) {
 			e.getStackTrace();
 		}

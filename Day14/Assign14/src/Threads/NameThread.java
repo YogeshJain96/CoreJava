@@ -6,16 +6,15 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import com.app.core.Emp;
 import java.util.ArrayList;
-import static Utils.CollectionUtils.SortBySal;
+import static Utils.CollectionUtils.SortByName;
 
-public class SalSortThread extends Thread {
+public class NameThread extends Thread {
 	private ArrayList<Emp> list;
 	private String fname;
-	public SalSortThread(String name, ArrayList<Emp> tlist,String fname) {
+	public NameThread(String name, ArrayList<Emp> tlist,String fname) {
 		super(name);
-		this.list = SortBySal(tlist);
+		this.list = SortByName(tlist);
 		this.fname=fname;
-		
 	}
 
 	@Override

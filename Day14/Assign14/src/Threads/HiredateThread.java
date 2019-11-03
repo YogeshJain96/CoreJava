@@ -6,22 +6,24 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import com.app.core.Emp;
 import java.util.ArrayList;
-import static Utils.CollectionUtils.SortByDept;
+import static Utils.CollectionUtils.SortByHiredate;
 
-public class DeptSortThread extends Thread {
-	private ArrayList<Emp> list=new ArrayList<>();;
-	
-	public DeptSortThread(String name, ArrayList<Emp> templist) {
-		super(name);// NEW
-		this.list = SortByDept(templist);
+public class HiredateThread extends Thread {
+	private ArrayList<Emp> list;
+	private String fname;
+	public HiredateThread(String name, ArrayList<Emp> tlist,String fname) {
+		super(name);
+		this.list = SortByHiredate(tlist);
+		this.fname=fname;
+		
 	}
 
 	@Override
 	public void run() // throws InterruptedException
 	{
 		System.out.println(Thread.currentThread().getName() + " started");
-		//System.out.println(list);
-		try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("FileByDept.txt"))) {
+		
+		try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fname))) {
 			out.writeObject(this.list);
 		} catch (FileNotFoundException e1) {
 			System.out.println("FileNotFoundException:Creating File");

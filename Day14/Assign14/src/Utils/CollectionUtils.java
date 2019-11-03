@@ -1,5 +1,6 @@
 package Utils;
 
+import java.time.LocalDate; 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -42,12 +43,23 @@ public class CollectionUtils {
 		return temp;
 	}
 
-	public static ArrayList<Emp> SortByDept(ArrayList<Emp> temp) {
+	public static ArrayList<Emp> SortByName(ArrayList<Emp> temp) {
 		// Sorting HM as per Department ID
 		Collections.sort(temp, new Comparator<Emp>() {
 			@Override
 			public int compare(Emp o1, Emp o2) {
-				return ((String) o1.getDeptId()).compareTo(o2.getDeptId());
+				return ((String) o1.getEname()).compareTo(o2.getEname());
+			}
+		});
+		return temp;
+	}
+	
+	public static ArrayList<Emp> SortByHiredate(ArrayList<Emp> temp) {
+		// Sorting HM as per Department ID
+		Collections.sort(temp, new Comparator<Emp>() {
+			@Override
+			public int compare(Emp o1, Emp o2) {
+				return ((LocalDate) o1.getHireDate()).compareTo(o2.getHireDate());
 			}
 		});
 		return temp;
