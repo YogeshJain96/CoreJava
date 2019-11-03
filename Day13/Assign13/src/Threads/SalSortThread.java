@@ -6,15 +6,15 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import com.app.core.Emp;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import static Utils.CollectionUtils.SortBySal;
 
 public class SalSortThread extends Thread {
-	private ArrayList<Emp> list;
+	private ArrayList<Emp> list=new ArrayList<>();
 
-	public SalSortThread(String name, ArrayList<Emp> list) {
+	public SalSortThread(String name, ArrayList<Emp> tlist) {
 		super(name);// NEW
-		this.list = list;
+		this.list = SortBySal(tlist);
+		
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class SalSortThread extends Thread {
 		System.out.println(Thread.currentThread().getName() + " started");
 		
 		try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("FileBySal.txt"))) {
-			out.writeObject(list);
+			out.writeObject(this.list);
 		} catch (FileNotFoundException e1) {
 			System.out.println("FileNotFoundException:Creating File");
 		} catch (IOException e1) {

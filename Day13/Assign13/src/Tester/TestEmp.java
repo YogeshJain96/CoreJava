@@ -5,10 +5,8 @@ sorted as per salary.*/
 package Tester;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
-import static Utils.PopulateUtils.populate;
+import static Utils.CollectionUtils.*;
 import com.app.core.Emp;
 
 import Threads.*;
@@ -22,24 +20,13 @@ public class TestEmp {
 //		hm.forEach((k, v) ->System.out.println(k+" : "+v));
 
 		ArrayList<Emp> list = new ArrayList<Emp>(hm.values());
+		SortByDept(list).forEach((v) ->System.out.println(v));
+		SortBySal(list).forEach((v) ->System.out.println(v));
 
 		System.out.println("Creating Threads...");
-		// Sorting HM as per Department ID
-		Collections.sort(list, new Comparator<Emp>() {
-			@Override
-			public int compare(Emp o1, Emp o2) {
-				return ((String) o1.getDeptId()).compareTo(o2.getDeptId());
-			}
-		});
-		DeptSortThread dt = new DeptSortThread("DeptSortThread", list);
-		// Sorting as per Salary
-				Collections.sort(list, new Comparator<Emp>() {
-					@Override
-					public int compare(Emp o1, Emp o2) {
-						return ((Integer) o1.getSal()).compareTo(o2.getSal());
-					}
-				});
-		SalSortThread st = new SalSortThread("SalSortThread", list);
+
+		DeptSortThread dt = new DeptSortThread("DeptSortThread", SortByDept(list));
+		SalSortThread st = new SalSortThread("SalSortThread", SortBySal(list));
 		dt.start();
 		st.start();
 		DispThread dispt = new DispThread("DispThread");
