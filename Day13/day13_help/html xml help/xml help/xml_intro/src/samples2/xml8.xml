@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE Persons [
+    <!ELEMENT Persons (Person)>
+    <!ELEMENT Person (Name, Phone?)>
+    <!ELEMENT Name (#PCDATA)>
+    <!ELEMENT Phone (#PCDATA)>
+]>
+
+<Persons>
+    <Person>
+        <Name></Name>
+        <Phone></Phone>
+    </Person>
+</Persons>

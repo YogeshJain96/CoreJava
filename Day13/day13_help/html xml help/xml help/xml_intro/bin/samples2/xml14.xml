@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Persons SYSTEM "xml14.dtd">
+
+<Persons>
+    <Person>
+        <Name>test1</Name>
+        <Address>
+            <FlatNo></FlatNo>
+            <State></State>
+            <Country></Country>
+        </Address>
+        <Phone phoneType="work"></Phone>
+        <Phone phoneType="personal"></Phone>
+    </Person>
+    
+    <Person>
+        <Name></Name>
+        <Address>
+            <FlatNo></FlatNo>
+            <State></State>
+            <Country></Country>
+        </Address>
+        <Phone phoneType="special"></Phone>
+        <Phone phoneType="work"></Phone>
+    </Person>
+</Persons>

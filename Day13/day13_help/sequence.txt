@@ -1,0 +1,130 @@
+Text file copy --buffered manner
+BR br=new BR(new FR(fileName));
+PW pw=new PW(new FW(fileName));
+ String line=null;
+while((line=br.readLine()) != null)
+   pw.println(line);
+
+Bin file copy --buffered manner
+BIS in=new BIS(new FIS(srcFileName));
+BOS out=new BOS(new FOS(destFileName));
+int size=in.available();
+byte[] bytes=new byte[size];
+int no=in.read(bytes);
+out.write(bytes);
+id,nm,sal,joinDate,dept
+DOS out=new DOS(new BOS(new FOS(...)));
+for(Emp e  : al)
+{
+   out.writeInt(e.getId());
+   out.writeUTF(e.getName());
+ ....
+   out.writeUTF(sdf.format(e.getDate());
+ ...
+}
+
+try(DIS in=new DIS(new BIS(new FIS(fn)));)
+{
+ //restore data in AL
+  AL<Emp> l1=new AL<>();
+  while(true)
+   l1.add(new Emp(in.readInt(),in.readUTF(),...,sdf.parse(in.readUTF()....));
+} catch (EOFException e)
+{
+   sop("data read over...");
+}
+
+Regarding java.io.File class
+--represents an abstract path pointing to file / folder. Represents meta data for a file or folder.
+
+constructors & methods
+
+1. public File(String pathname)
+Creates a file cls instance from specified path.
+
+2.  public File(String folder,String fileName)
+eg :
+sop ("Enter dir name n file name ");
+File f1=new File(sc.nextLine(),sc.next());
+Methods
+exists,isFile,canRead,canWrite,canExecute,lastModified, list,listFiles,createNewFile
+eg : File f1=new File(sc.nextLine());
+if(f1.exists() && f1.isFile() && f1.canRead())
+ sop("Last modified on "+new Date(f1.lastModified());
+
+eg : 
+File f1=new File(sc.nextLine());
+boolean created=f1.createNewFile();
+
+eg : sop("enter src file path n new dest");
+File src=new File(sc.nextLine());
+if(.....)
+{
+   File dest=new File(sc.nextLine());
+   boolean flag=src.renameTo(dest);
+}
+Revise
+serialization n de-serialization
+API
+classes & methods
+
+which is the i/f to be implemented by all objects in the object graph ?
+
+What are the contents of serialized bin stream ?
+
+What are pre requisites of de-serialization ?
+
+When will you get java.io.NotSerializableException?
+When will you get InvalidClassException ?
+Triggers (refer to javadocs)
+
+transient keyword
+
+If super class is serializable , what about sub class ?
+If super class is not serializable can sub class be serializable ?
+
+Serializable vs Externizable i/f
+
+Solve code samples in lab session.
+
+Solve BankAccount HAS-A Transactions
+copy earlier code from eclipse project --day11.1
+
+Transaction -- type(withdraw/deposit),amount,txDate (LocalDate --java 8 API)
+
+Objective -- Create java application , to store/restore account details to/from bin file using object streams.
+
+Layers (classes used)
+1. core classes -- BankAccount , AccType(enum), Transaction, TxType(enum)
+2. custom exception
+3. ValidationRules
+4. CollectionUtils
+5. IOUtils
+store & resotre.
+6. Tester
+
+
+refer to rdy code --TestLocalDate.java
+
+----------------------------
+Enter Threads
+
+Objective -- test concurrency
+extends Thread
+
+implements Runnable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

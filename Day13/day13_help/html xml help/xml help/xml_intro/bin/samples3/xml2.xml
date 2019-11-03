@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<Tables>
+    
+    <t1:table xmlns:t1="http://realtable">
+        <t1:price>10000</t1:price>
+        <t1:company>zyz</t1:company>
+    </t1:table>
+  
+    <t1:table xmlns:t1="http://realtable">
+        <t1:price>15000</t1:price>
+        <t1:company>abc</t1:company>
+    </t1:table>
+  
+    <t2:table xmlns:t2="http://htmltable">
+        <t2:tr>
+            <t2:td></t2:td>
+            <t2:td></t2:td>
+        </t2:tr>
+        <t2:tr>
+            <t2:td></t2:td>
+            <t2:td></t2:td>
+        </t2:tr>
+    </t2:table>
+    
+</Tables>

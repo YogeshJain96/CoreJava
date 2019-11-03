@@ -1,0 +1,142 @@
+* DTD
+  - Types
+    - internal DTD
+      - the DTD definition written in the same xml file
+      - the file becomes cluttered with xml content and DTD content
+    - external DTD 
+      - a new file with .dtd extension must be created with all the definitions
+      - external DTD can NOT start with DOCTYPE
+      - to load external DTD SYSTEM keyword is used
+      - <!DOCTYPE <element name> SYSTEM "<dtd file name>"ù>
+    - mixed DTD
+      - combination of both internal and external DTD
+      - <!DOCTYPE <element name> SYSTEM "<dtd file name>"ù [
+            <internal DTD rules>
+        ]>
+
+  - Limitations
+    - DTD has its own syntax
+    - DTD can not differentiate between character and number
+    - values can not be restricted using DTD
+    - DTD can not add any restriction on type of data and number of times it gets repeated
+    - DTD can not understand the xml namespace
+
+* xml namespace
+  - group which separates multiple elements having same logical structure 
+  - xmlns keyword is used
+    - syntax:
+       <table xmlns:<prefix>="http://<namespace name>"ù></table>
+  - to put an element inside a namespace 
+    - <prefix:<element name>>
+    - e.g. <p1:table>..</p1:table>
+  - rules
+    - every namespace can be used inside the same element or child elements where it is defined
+    - by default all the child elements are the part of same namespace of their parent element
+    - 
+
+* XML Schema
+  - xml schema is another way to define logical rules
+  - data types
+    - string: accepts any character including number and special symbols
+    - integer: positive and negative
+    - decimal: float values
+    - positiveInteger:
+    - negativeInteger:
+    - date:
+    - time:
+    - dateTime:
+    - positiveDecimal:
+    - negativeDecimal: 
+  - custom types
+    - add restrictions
+  
+  - element Types
+    - Simple element
+      - does NOT contain any child element
+      - does NOT contain any attribute
+    - Complex element
+      - may contain at least a single child element
+      - may contain at least a single attribute
+
+  - rules
+    - xml schema must be written outside the xml file (externally)
+    - the file extension must be .xsd (xml schema definition/document)
+
+  - Element
+    - use: xs:element
+    - syntax:   
+       <xs:element name="<name of element"ù type="<element type>"ù />
+    - to create custom type
+      <xs:element name="<element name>"ù >
+	  <xs:simpleType>
+	      <xs:restriction base="<data type>"ù>
+                 <!"î- add the required condition "î->
+              </xs:restriction>
+          </xs:simpleType>
+      </xs:element>
+
+     - types
+       - simple element
+         <xs:element name="<name of element"ù type="<element type>"ù />
+
+       - element having child element(s) in a specific order
+         - all the child element(s) must be present
+
+I     <xs:element name="<element name>"ù >
+	  <xs:complexType>
+	      <xs:sequence>
+                 <!"- child element(s) "->
+              </xs:sequence>
+          </xs:complexType>
+      </xs:element>
+
+
+       - element having child element(s) where order is not imp
+         - all the child element(s) must be present
+
+I     <xs:element name="<element name>"ù >
+	  <xs:complexType>
+	      <xs:all>
+                 <!"- child element(s) î->
+              </xs:all>
+          </xs:complexType>
+      </xs:element>
+
+
+       - element having child element(s) where only one child element must be present
+
+I     <xs:element name="<element name>"ù >
+	  <xs:complexType>
+	      <xs:choice>
+                 <!"- child element(s) "->
+              </xs:choice>
+          </xs:complexType>
+      </xs:element>
+
+
+    - element having repeating child element     
+      - occurrence indicator 
+        - minOccurs: minimum number of times the element should me present
+          - = 0: element becomes optional
+        - maxOccurs: maximum number of times the element should me present
+          -> unbounded: infinity
+
+    - element having an attribute 
+      - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

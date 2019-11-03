@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Persons>
+
+    <Person>
+        <Name>person1</Name>
+        <Address>
+            <StreetNo>1</StreetNo>
+            <BuildingName>xyz</BuildingName>
+            <FlatNo>420</FlatNo>
+            <State>MH</State>
+            <Country>India</Country>
+        </Address>
+        <Phone>3454456</Phone>
+    </Person>
+    
+</Persons>

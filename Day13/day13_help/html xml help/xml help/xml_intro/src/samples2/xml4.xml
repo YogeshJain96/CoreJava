@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Person [
+
+    <!ELEMENT Person (Name, Address)>
+    <!ELEMENT Name (#PCDATA)>
+    <!ELEMENT Address (#PCDATA)>
+    
+]>
+
+<Person>
+    <Name>person1</Name>
+    <Address>Pune</Address>
+</Person>

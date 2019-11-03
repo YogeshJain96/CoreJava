@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<formula>
+    
+    <myformula>
+        if (a &lt; b) { print "test"; }
+    </myformula>
+    
+    <myformula>
+        <![CDATA[>if (a < b) { print "test"; }<]]>
+    </myformula>
+    
+</formula>

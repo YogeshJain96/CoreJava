@@ -1,0 +1,162 @@
+* XML
+  - is a Markup Language
+    - made up of elements and data
+  - eXtended Markup Language
+  - standardized language by w3c
+  - imp
+    - the elements are user-defined: xml writer must define the xml elements
+    - simple text file format
+    - xml is interpreted 
+    - an interpreter is required: by default browser is used to interpret the xml
+  - usage
+    - structuring the data
+    - to transfer data from one entity to another in commonly understandable format
+    - to store very small amount data
+  - xml vs html
+    - html is used for designing user interface for browser
+      xml is NOT used to design UI
+    - html has pre-defined tags
+      xml has user-defined elements
+    - html is case in-sensitive : <table></Table>
+      xml is case sensitive
+
+* XML element
+  - word enclosed in < and >
+  - types
+    - starting element: <name>
+    - closing element: </name>
+    - empty element
+      - normal syntax: <name></name>
+      - shorthand: <name />
+    - root element
+      - which starts and closes the document
+      - also known as document type or document element
+  - rules to create an element
+    - every file must have one and only one root element
+    - Special characters like space can not be used in element
+      - <First Name>  <-  incorrect element
+      - <FirstName>, <First_Name>
+    - only _ can be used in element
+      - <First_Name>
+    - elements cannot start with number
+      - <1Name>       <-  incorrect element
+      - <Name>
+    - every starting element must be closed with closing element
+      - <Name>test    <- incorrect
+      - <Name>test</Name>
+    - element name is case sensitive
+      - <Name> and <name> are two different element
+
+* Attribute
+  - it adds more information in xml element
+  - it is presented in name=value pair
+    - e.g. phoneType=“work”
+  - rules
+    - can not be repeated
+      - e.g. <Phone phoneType=“work” phoneType=“special”></Phone>
+             <Phone phoneType=“work”></Phone> 
+    - in name=value format
+    - can NOT have multiple values at the same time
+      - e.g. <Phone phoneType=“work”,”special”></Phone>
+    - can NOT have a child attribute
+  - attribute-only element
+    - having only attributes
+      - e.g. <Person name="test" address="pune" />
+  - mixed type element
+    - has both: child element and attribute
+    - <Person name="test" address="pune">
+       <Phone phoneType="special">4544</Phone>
+       <Phone phoneType="work">4544</Phone>
+       <Phone phoneType="personal">45464</Phone>    
+      </Person>
+
+* Parts
+  - XML Header
+    - <?xml version=“1.0” encoding=“UTF-8” ?>
+    - it is optional
+    - where:
+      - version: specification version used to create this xml
+      - encoding: type of characters using in this xml
+        - UTF: Unicode Transformation Format
+          - UTF-8: 8 bit or 1 byte
+          - UTF-16: 16 bit or 2 bytes (wide character)
+  - XML body
+    - collection of user-defined elements
+
+* CDATA
+  - the characters included in the CDATA section are not parsed
+  - special meaning of these characters will not be used while presenting xml
+  - <![CDATA[>  <data> <]]>
+
+* Well formed xml document
+  - the xml is following all the syntactical rules specified by W3C
+
+* Valid XML
+  - a well formed xml which follows all the logical rules as well
+  - logical rules can be defined by using DTD or XML Schema
+  - every Valid xml must be well formed xml but every well formed xml may NOT be valid xml
+
+* DTD
+  - Document Type Definition
+  - used to define the logical rules
+  - types
+    - a root element (!DOCTYPE)
+      - used to defined a root element
+      - <!DOCTYPE <element name> [ <logical rules> ]>
+    - elements
+      - simple element (!ELEMENT)
+        - <!ELEMENT <element name> (#PCDATA)>
+        - where
+          - #PCDATA: all parcelable characters
+      - element having child element(s) where order is imp 
+        - <!ELEMENT <element name> (<child element1>, <child element2>…)>
+        - element is made up of sequence of child elements
+        - child elements must be present in the pre-defined order
+      - element having child element(s) where order is not imp
+        - <!ELEMENT <element name> ANY>
+        - where
+          - ANY: any element in any order
+      - empty element
+        - element having no data   
+        - <!ELEMENT <element name> EMPTY>
+
+    - Wild characters
+      - *: element can appear zero or more times
+      - +: element can appear one or more times
+      - ?: element can either appear only once or absent 
+
+    - attributes
+      - !ATTLIST is used to define an attribute
+      - <!ATTLIST <element name>
+             <attribute name>  CDATA <type> >
+      - e.g.
+
+		<!ATTLIST Phone 
+		        phoneType CDATA #IMPLIED>
+        where
+        - type = #IMPLIED  -> optional      -> ignore
+        - type = “value”   -> default value -> default value
+        - type = #REQUIRED -> compulsory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

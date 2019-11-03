@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+<Person>
+    <Name>test</Name>
+    <Address>Karad</Address>
+    <Phone phoneType="special">4544</Phone>
+    <Phone phoneType="work">4544</Phone>
+    <Phone phoneType="personal">45464</Phone>
+</Person>
+-->
+
+<!--
+
+<Person name="test" address="Karad" />
+
+-->
+
+<Person name="test" address="Pune">
+    <Phone phoneType="special">4544</Phone>
+    <Phone phoneType="work">4544</Phone>
+    <Phone phoneType="personal">45464</Phone>    
+</Person>

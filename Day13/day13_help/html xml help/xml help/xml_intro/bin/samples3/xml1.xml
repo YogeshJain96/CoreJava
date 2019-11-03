@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Cars SYSTEM "xml1.dtd" [
+
+    <!ELEMENT Power (#PCDATA)>
+    
+    <!ENTITY mh "Mahindra">
+    <!ENTITY tata "Tata Pvt. Ltd">
+
+]>
+
+<Cars>
+    <Car>
+        <Name></Name>
+        <Company>&mh;</Company>
+        <Engine></Engine>
+        <FuelType></FuelType>
+        <Power></Power>
+    </Car>
+    <Car>
+        <Name></Name>
+        <Company>&tata;</Company>
+        <Engine></Engine>
+        <FuelType></FuelType>
+        <Power></Power>
+    </Car>
+    <Car>
+        <Name></Name>
+        <Company></Company>
+        <Engine></Engine>
+        <FuelType></FuelType>
+        <Power></Power>
+    </Car>
+</Cars>

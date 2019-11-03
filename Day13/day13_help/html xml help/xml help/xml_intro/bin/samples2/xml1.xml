@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Persons>
+
+    <Person>
+        <Name></Name>
+        <Address></Address>
+        <Phone phoneType="work"></Phone>
+        <Phone phoneType="special"></Phone>
+        <Phone phoneType="personal"></Phone>
+    </Person>
+    
+    <Person>
+        <Name></Name>
+        <Address></Address>
+        <Phone phoneType="work"></Phone>
+        <Phone phoneType="special"></Phone>
+        <Phone phoneType="personal"></Phone>
+    </Person>
+
+    <Person>
+        <Name></Name>
+        <Address></Address>
+        <Phone phoneType="work"></Phone>
+        <Phone phoneType="special"></Phone>
+        <Phone phoneType="personal"></Phone>
+    </Person>
+    
+</Persons>

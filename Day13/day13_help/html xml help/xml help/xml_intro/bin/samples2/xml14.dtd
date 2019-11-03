@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT Persons (Person+)>
+<!ELEMENT Person (Name, Address, Phone+)>
+<!ELEMENT Name (#PCDATA)>
+
+<!ELEMENT Address (FlatNo, State, Country)>
+<!ELEMENT FlatNo (#PCDATA)>
+<!ELEMENT State (#PCDATA)>
+<!ELEMENT Country (#PCDATA)>
+
+<!ELEMENT Phone (#PCDATA)>
+
+<!ATTLIST Phone
+    phoneType (work|special|personal) #REQUIRED>
+

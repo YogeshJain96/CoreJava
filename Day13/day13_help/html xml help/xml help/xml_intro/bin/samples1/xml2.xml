@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<Mobiles>
+
+    <Mobile>
+        <Name>iPhone 6</Name>
+        <Company>Apple</Company>
+        <RAM>1GB</RAM>
+        <CPU>A8</CPU>
+    </Mobile>
+
+    <Mobile>
+        <Name>Galaxy S6</Name>
+        <Company>Samsung</Company>
+        <RAM>3GB</RAM>
+        <CPU>Exynos</CPU>
+    </Mobile>
+
+</Mobiles>

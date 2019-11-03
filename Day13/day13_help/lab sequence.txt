@@ -1,0 +1,11 @@
+Import day13.1 , day13.2  & advanced_serlialization eclipse projects 
+
+1. Revise complete serialization & de-serialization using nested collection (BankAccount -- HAS-A -- Transactions)
+
+2. Solve ready code samples from 
+advanced_serlialization
+
+3. Revise threads code samples from day13.2
+
+4. Solve assignment.
+(at least 1st one!)

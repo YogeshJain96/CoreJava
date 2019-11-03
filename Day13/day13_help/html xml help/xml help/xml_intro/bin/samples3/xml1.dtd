@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT Cars (Car+)>
+
+<!ELEMENT Car (Name, Company, Engine, FuelType, Power)>
+<!ELEMENT FuelType (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Company (#PCDATA)>
+<!ELEMENT Engine (#PCDATA)>

@@ -1,0 +1,57 @@
+<form method="get" action="test">
+<input type="checkbox" name="c_blue" value="yes">
+<input type="checkbox" name="c_red" value="yes" CHECKED>
+<input type="checkbox" name="c_pink" value="yes"
+CHECKED>
+<input type="checkbox" name="c_yellow" value="yes">
+<input type="submit">
+</form>
+
+
+
+
+http://localhost:9090/day1/test?c_blue=yes&c_red=yes
+
+
+
+<form method="POST" action="test">
+Red <input type="checkbox" name="clr" value="RED">
+Blue<input type="checkbox" name="clr" value="BLUE" CHECKED>
+Green<input type="checkbox" name="clr" value="GREEN"
+CHECKED>
+
+<input type="submit">
+</form>
+
+
+<form method="POST" action="test">
+<input type="radio" name="color" value="blue">
+<input type="radio" name="color" value="red" CHECKED>
+<input type="radio" name="color" value="pink">
+<input type="submit">
+</form>
+
+
+
+<form method="POST" action="test">
+<select name="myselect">
+<option value="1">First</option>
+<option value="2" SELECTED>Second</option>
+<option value="3">Third</option>
+<option value="4">Fourth</option>
+<option value="5">Fifth</option>
+</select>
+<input type="submit">
+</form>
+
+
+<form method="POST" action="test">
+<select name="myselect" size="4" MULTIPLE>
+<option value="1">First</option>
+<option value="2" SELECTED>Second</option>
+<option value="3">Third</option>
+<option value="4" SELECTED>Fourth</option>
+<option value="5">Fifth</option>
+</select>
+<input type="submit">
+</form>

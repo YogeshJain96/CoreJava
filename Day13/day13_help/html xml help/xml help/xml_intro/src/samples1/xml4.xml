@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Person>
+    <Name>person1</Name>
+    <Address>Pune</Address>
+    
+    <Phone phoneType="personal">35345456</Phone>
+    <Phone phoneType="work">44647676</Phone>
+    <Phone phoneType="special">56567567</Phone>
+</Person>

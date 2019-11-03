@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Persons [
+    <!ELEMENT Persons (Person+)>
+    <!ELEMENT Person (Name, Address, Phone*)>
+    <!ELEMENT Name (#PCDATA)>
+    <!ELEMENT Address (#PCDATA)>
+    <!ELEMENT Phone (#PCDATA)>
+    
+    <!ATTLIST Phone
+        phoneType CDATA #REQUIRED>
+]>
+
+<Persons>
+    <Person>
+        <Name></Name>
+        <Address></Address>
+        <Phone phoneType="work"></Phone>
+        <Phone phoneType="special"></Phone>
+        <Phone phoneType="personal"></Phone>
+    </Person>
+</Persons>

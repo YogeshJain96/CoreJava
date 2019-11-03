@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<tables>
+    <p1:table xmlns:p1="http://realtable">
+        <p1:price></p1:price>
+        <p1:company></p1:company>
+        <p1:brand></p1:brand>
+    </p1:table>
+    
+    <p1:table xmlns:p1="http://realtable">
+        <price></price>
+        <company></company>
+        <brand></brand>
+    </p1:table>
+    
+    <p2:table xmlns:p2="http://htmltable">
+        <tr>
+            <td></td>
+        </tr>
+    </p2:table>
+</tables>

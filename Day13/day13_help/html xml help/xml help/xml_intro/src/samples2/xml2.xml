@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Name [
+    <!ELEMENT Name (#PCDATA)>
+]>
+
+<Name>person1</Name>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE Person [
+    <!ELEMENT Person (Name, Address, TestElement, br)>
+    <!ELEMENT TestElement EMPTY>
+    <!ELEMENT Name (#PCDATA)>
+    <!ELEMENT Address (#PCDATA)>
+    <!ELEMENT br EMPTY>
+]>
+
+<Person>
+    <Name>person1</Name>
+    <Address>pune</Address>
+    <TestElement></TestElement>
+    <br />
+</Person>
