@@ -134,7 +134,7 @@ public class CustTester {
 				System.out.println("All Customers");
 				custHM.forEach((k, v) ->System.out.println(k+" : "+v));
 				break;
-			case 0:
+			case 0:exit=true;
 				System.out.println("Good Bye!");
 				break;
 			default:System.out.println("Invalid Choice");

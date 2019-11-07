@@ -1,6 +1,7 @@
 package cust_execs;
 
-import java.util.ArrayList;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -12,8 +13,13 @@ public class Validation {
 		return type.valueOf(t.toUpperCase()) ;
 	}
 	public static Date checkDate(String d) {
-		Date temp;
-		return null;
+		  Date temp = null;
+		try {
+			temp = new SimpleDateFormat("dd/MM/yyyy").parse(d);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} 
+		return temp;
 	}
 	public static boolean checkLogin(String email, String pass, HashMap<String, Customer> custHM) {	
 		boolean flag=false;
